@@ -187,6 +187,7 @@ wget -O  $HOME/dill/health_check.sh https://raw.githubusercontent.com/0xmoei/dil
 chmod +x health_check.sh && chmod +x start_light.sh
 ```
 Ports in my `start_light.sh` are changed to: 8085 8555 30304 8556
+
 Ports in my `/health_check.sh` are changed to: 8085
 
 * if you have any of these ports using by another process, you can change them
