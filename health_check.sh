@@ -41,7 +41,7 @@ else
     exit 1
 fi
 
-peers_count=`curl -s localhost:8081/p2p | grep -m 1  peers | awk '{print $1}'`
+peers_count=`curl -s localhost:8085/p2p | grep -m 1  peers | awk '{print $1}'`
 vlog "node peers count $peers_count"
 if [ $peers_count -gt 0 ]; then
     vlog "node's network connectivity check passed"
