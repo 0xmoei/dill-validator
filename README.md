@@ -150,15 +150,6 @@ cd ~ && cd $HOME/dill
 ```
 ![image](https://github.com/user-attachments/assets/b56449a2-d409-4505-ad48-773e7de4cfb2)
 
-### Stop validator
-```console
-ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
-```
-
-### Start validator
-```console
-./start_light.sh -p walletPw.txt
-```
 
 ### Check logs
 ```console
