@@ -179,7 +179,19 @@ Stop:
 ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
 ```
 
-### 2- Get my files with port configuration
+### 2- Change ports
+```console
+nano $HOME/dill/default_ports.txt
+```
+
+### 3- Start node 
+```
+./start_light.sh -p walletPw.txt
+```
+
+OR
+
+### 2- (only if you are phase 1 - first 320 validators and do not have default_ports.txt) Get my files with port configuration
 ```
 rm -rf $HOME/dill/health_check.sh && rm -rf $HOME/dill/start_light.sh && \
 wget -O  $HOME/dill/start_light.sh https://raw.githubusercontent.com/0xmoei/dill-validator/main/start_light.sh && \
