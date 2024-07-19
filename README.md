@@ -174,29 +174,55 @@ ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
 ```console
 nano $HOME/dill/default_ports.txt
 ```
+CTRL+A+D
 
 ### 3- Start node 
 ```
 ./start_light.sh -p walletPw.txt
 ```
 
-OR
+### 4- Check health
+```console
+./health_check.sh -v
+```
+![image](https://github.com/user-attachments/assets/b56449a2-d409-4505-ad48-773e7de4cfb2)
 
-### 2- (only if you are phase 1 - first 320 validators and do not have default_ports.txt) Get my files with port configuration
+
+## Change ports (if you don't have ./health_check.sh -v or default_ports.txt)
+### 1- Stop node
+```console
+cd ~ && cd $HOME/dill
+```
+
+Stop:
+```console
+ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
+```
+
+### 2- Download ./health_check.sh -v & default_ports.txt
 ```
 rm -rf $HOME/dill/health_check.sh && rm -rf $HOME/dill/start_light.sh && \
 wget -O  $HOME/dill/start_light.sh https://raw.githubusercontent.com/0xmoei/dill-validator/main/start_light.sh && \
 wget -O  $HOME/dill/health_check.sh https://raw.githubusercontent.com/0xmoei/dill-validator/main/health_check.sh && \
-chmod +x health_check.sh && chmod +x start_light.sh
+wget -O $HOME/dill/default_ports.txt https://raw.githubusercontent.com/0xmoei/dill-validator/main/default_ports.txt
+
+chmod +x health_check.sh && chmod +x start_light.sh && chmod +x default_ports.txt
 ```
-Ports in my `start_light.sh` are changed to: 8085 8555 30304 8556
 
-Ports in my `/health_check.sh` are changed to: 8085
-
-* if you have any of these ports using by another process, you can change them
-
+### 3- Change ports
+```console
+nano $HOME/dill/default_ports.txt
+```
+CTRL+A+D
 
 ### 3- Start node 
 ```
 ./start_light.sh -p walletPw.txt
 ```
+
+### 4- Check health
+```console
+./health_check.sh -v
+```
+![image](https://github.com/user-attachments/assets/b56449a2-d409-4505-ad48-773e7de4cfb2)
+
