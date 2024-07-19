@@ -1,0 +1,9 @@
+rpc-port 4000 tcp
+monitoring-port  8080 tcp
+validator-monitoring-port  8082 tcp
+p2p-tcp-port 13000 tcp
+exec-authrpc.port 8551 tcp
+exec-http.port 8545 tcp
+grpc-gateway-port 3500 tcp
+exec-port 30303 tcp&&udp
+p2p-udp-port 12000 udp
