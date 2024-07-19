@@ -156,6 +156,8 @@ cd ~ && cd $HOME/dill
 tail -f -n 100 $HOME/dill/light_node/logs/dill.log
 ```
 
+#
+
 # Error: if your validator doesn't start or your healthcheck doesnt work
 
 ## Change ports
